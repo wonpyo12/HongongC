@@ -10,14 +10,14 @@ int main() {
 		scanf("%d", &number[i]);
 		if (number[i] > 45 || number[i]<1) {
 			printf("45보다 작고 1보다 커야합니다.\n"); //45보다 작고 1보다 커야한다.
-			i--;
+			i--; //잘못된 정수를 입력할경우 횟수가 원래상태로 돌아가야하기 때문에 i에 1을 빼주었다.
 			continue;
 		}
 		
 		if (number[i] == number[i-1]) { //같은 번호면 같은 번호가 있습니다 출력하고 횟수 새로입력 
 			printf("같은 번호가 있습니다.\n");
-			i--;
-			continue;
+			i--; 
+			continue; // 이조건이 참이면 다시 for로 돌아가서 실행
 		}
 		else if (number[i] == number[i - 2]) {
 			printf("같은 번호가 있습니다.\n");
@@ -43,7 +43,7 @@ int main() {
 		}
 	printf("입력된 로또 번호 : ");
 	for (int j = 0; j < 6; j++) {
-		printf("%d ", number[j]); //입력받은 로또번호 출력
+		printf("%d ", number[j]); //배열 출력
 	}
 	return 0;
 }
