@@ -23,7 +23,7 @@ int main() {
 	printf("몫 : %d, 나머지 : %d", mod, rem);
 	return 0;
 }
-int func(int* num ,int* add) { //주소값으로 받으오기때문에 포인터 변수 사용
+int func(int* num ,int* add) { //주소값으로 받아오기때문에 포인터 변수 사용
 	int a;
 	printf("양수 입력 : ");
 	scanf("%d", &a);
