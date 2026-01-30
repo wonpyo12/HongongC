@@ -20,7 +20,13 @@ int main() {
 	scanf("%d", &number);
 	printf("사용하실 금액을 입력해주세요 : ");
 	scanf("%d", &user_price);
+	printf("잔액 : %d\n", user_price);
 	for (i = 0; i < 6; i++) {
+		if (number<1 || number>6) {
+			printf("없는 상품 번호입니다.\n");
+			printf("상품번호를 다시입력해주세요 : ");
+			scanf("%d", &number);
+		}
 		if (strcmp(menu[number-1],menu[i])==0) {
 			if (price[i] < user_price) {
 				printf("%d원이 남습니다. 거스름돈 반환\n", user_price - price[i]);
@@ -28,6 +34,7 @@ int main() {
 			}
 			else if (price[i] > user_price) {
 				printf("%d원이 부족합니다.\n", price[i] - user_price);
+				
 				printf("%d원을 반환합니다. 다음에 다시 이용해주세요", user_price);
 			}
 			else if(price[i] == user_price) {
@@ -35,6 +42,7 @@ int main() {
 			}
 			break;
 		}
+		
 	}
 
 	
