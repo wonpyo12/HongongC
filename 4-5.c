@@ -30,8 +30,20 @@ int main() {
 		}
 		if (strcmp(menu[number-1],menu[i])==0) {
 			if (price[i] < user_price) {
-				printf("%d원이 남습니다. 거스름돈 반환\n", user_price - price[i]);
-				printf("결재완료!! 상품 %s가 %d원결재되었습니다.상품을 가져가 주세요", menu[i], price[i]);
+				user_price = user_price - price[i];
+				printf("%d원이 남습니다.\n", user_price);
+				printf("결재완료!! 상품 %s가 %d원결재되었습니다.상품을 가져가 주세요.\n", menu[i], price[i]);
+				printf("상품을 추가로 결재 하시겠습니까?");
+				scanf("%s", &a);
+				if (strcmp(a, "yes") == 0) {
+					printf("추가로 구매하실 상품 번호를 입력해주세요 : ");
+					scanf("%d", &number);
+					i = 0;
+				}
+				else if (strcmp(a, "no") == 0) {
+					printf("거스름돈 %d원을 반환합니다. 다음에 다시 이용해주세요", user_price);
+					break;
+				}
 			}
 			else if (price[i] > user_price) {
 				printf("%d원이 부족합니다.금액을 추가로 넣으시겠습니까?(yes/no) : ", price[i] - user_price);
@@ -50,7 +62,22 @@ int main() {
 				
 			}
 			else if(price[i] == user_price) {
-				printf("결재완료!! 상품 %s가 %d원결재되었습니다.상품을 가져가 주세요", menu[i], price[i]);
+				printf("결재완료!! 상품 %s가 %d원결재되었습니다.상품을 가져가 주세요\n", menu[i], price[i]);
+				printf("상품을 추가로 결재 하시겠습니까?");
+				scanf("%s", &a);
+				if (strcmp(a, "yes") == 0) {
+					printf("추가로 구매하실 상품 번호를 입력해주세요 : ");
+					scanf("%d", &number);
+					printf("추가하실 금액을 입력해주세요 : ");
+					scanf("%d", &user_price);
+					i = 0;
+					
+				}
+				else if (strcmp(a, "no") == 0) {
+					printf("이용해 주셔서 감사합니다.");
+					break;
+				}
+				
 			}
 			
 		}
