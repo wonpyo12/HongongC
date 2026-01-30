@@ -4,7 +4,7 @@
 int main() {
 	 
 	char* menu[] = {"코카콜라","밀키스","칠성사이다","웰치스","암바사"}; //메뉴
-	int price[] = { 1000,900,800,1200,700 }//하나당 가격
+	int price[] = { 1000,900,800,1200,700 };//하나당 가격
 	int user_price,number,priceadd;
 	int i = 0;
 	char a[10];
